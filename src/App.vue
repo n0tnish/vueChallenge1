@@ -31,21 +31,28 @@ export default {
           prodName: 'Opheus and Eurydice',
           category: 'Opheus and Eurydice',
           amount: 250000,
-          image: 'https://freeimage.host/i/JuH7Jqb',
+          image: 'https://i.postimg.cc/SK4yzTqC/opheus-mourning-the-death-of-eurydice.jpg',
         },
         {
           id: 2, 
           prodName: 'The fall of Icarus',
           category: 'Icarus',
           amount: 450000,
-          image: 'https://freeimage.host/i/JuHOOEx'
+          image: 'https://i.postimg.cc/FHz9bdJs/fall-of-icarus.jpg'
         },
       {
         id: 3, 
         prodName: 'Man begging for his woman back',
         category: 'man',
         amount: 500000,
-        image: 'https://freeimage.host/i/JuHswAb'
+        image: 'https://i.postimg.cc/NMcqn5LX/bronte-cover.jpg'
+      },
+      {
+        id: 4,
+        prodName: 'Psyche Obtaining the Elixir of Beauty from Proserpine',
+        category: 'Psyche',
+        amount: 782196,
+        image: 'https://i.postimg.cc/5NkWFBLn/Psyche-Obtaining-the-Elixir-of-Beauty-from-Proserpine.jpg'
       }
       ]
     }

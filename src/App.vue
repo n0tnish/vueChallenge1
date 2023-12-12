@@ -1,23 +1,24 @@
 <template>
- <div class="wrapper">
-    <div class="row" v-if="products.length">
-      <div class="prodCard" v-for="product in products" :key="product.id">
-        <div class="card-header">
+<div id="app">
+  <input v-model="searchQuery" placeholder="Search by category">
+  
+  <div class="wrapper">
+    <div class="row">
+      <div v-for="product in filteredProducts" :key="product.id" class="col">
+        <div class="prodCard">
+          <img :src="product.image" alt="Product Image">
           <h3>{{ product.prodName }}</h3>
-        </div>
-        <div class="card-body">
-          <img @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" :src="product.image" :alt="product.prodName" loading="lazy">
-          <p :class="product.amount > 420000 ? 'expensive' : 'cheap' ">R{{ product.amount.toFixed(2) }}</p>
-        </div>
-        <div class="card-footer">
-          <a href="#" type="button">View Detail</a>
+          <p :class="[product.amount > 420000 ? 'expensive' : 'cheap']">
+            R{{ product.amount.toFixed(2) }}
+          </p>
+          <a href="#">View Detail</a>
         </div>
       </div>
     </div>
-    <div v-else>
-      <h2>Sorry, we are out of stock.</h2>
-    </div>
   </div>
+  
+  <p v-if="filteredProducts.length === 0">Sorry, we have no products matching the search.</p>
+</div>
 </template>
 
 <script>
@@ -54,12 +55,26 @@ export default {
         amount: 782196,
         image: 'https://i.postimg.cc/5NkWFBLn/Psyche-Obtaining-the-Elixir-of-Beauty-from-Proserpine.jpg'
       }
-      ]
+      ],
+      searchQuery: '',
+
+      computed: {
+  filteredProducts() {
+    if (this.searchQuery === '') {
+      return this.products;
+    } else {
+      return this.products.filter((product) => {
+        return product.category.toLowerCase().includes(this.searchQuery.toLowerCase());
+      });
+    }
+  }
+}
     }
 
   }
  
 }
+
 </script>
 
 <style>

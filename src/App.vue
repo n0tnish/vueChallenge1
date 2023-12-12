@@ -15,7 +15,7 @@
       </div>
     </div>
     <div v-else>
-      <h2>Sorry, our products are out of stock.</h2>
+      <h2>Sorry, we are out of stock.</h2>
     </div>
   </div>
 </template>

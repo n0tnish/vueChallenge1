@@ -64,4 +64,27 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.wrapper :is(.row) {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.prodCard {
+  width: 18rem;
+}
+
+.prodCard :is(>*, img) {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+.expensive {
+  font-weight: bolder;
+  color: rgb(241, 179, 227);
+}
+
+.cheap {
+  color: black;
+}
 </style>
